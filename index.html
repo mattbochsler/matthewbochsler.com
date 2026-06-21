@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matthew Bochsler — Energetic Bodywork & Classes | Austin, TX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --arctic:   #F5FBFF;
+      --alice:    #F0F8FF;
+      --powder:   #B0E0E6;
+      --sky:      #9ABDDC;
+      --sky-deep: #5E9BBF;
+      --navy:     #1A2F45;
+      --navy-mid: #2C4A63;
+      --slate:    #4A6880;
+      --mist:     #D6EAF4;
+      --white:    #FFFFFF;
+    }
+    html { scroll-behavior: auto; }
+    body {
+      background: var(--arctic);
+      color: var(--navy);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── LOADING ── */
+    #page-loader {
+      position: fixed; inset: 0; background: var(--arctic);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 999; transition: opacity 0.4s ease;
+    }
+    #page-loader.hidden { opacity: 0; pointer-events: none; }
+    .loader-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px; color: var(--sky-deep); letter-spacing: 0.06em;
+      animation: pulse 1.4s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 56px;
+      background: rgba(245,251,255,0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 0.5px solid var(--mist);
+      transition: padding 0.3s ease;
+    }
+    .nav-logo { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:400; letter-spacing:0.04em; color:var(--navy); }
+    .nav-links { display:flex; gap:36px; list-style:none; }
+    .nav-links a { font-size:13px; font-weight:400; color:var(--slate); text-decoration:none; letter-spacing:0.03em; transition:color 0.2s; }
+    .nav-links a:hover { color:var(--navy); }
+    .nav-book { font-size:13px; font-weight:400; padding:10px 22px; background:var(--sky-deep); color:var(--white); border-radius:40px; text-decoration:none; transition:background 0.2s; }
+    .nav-book:hover { background:var(--navy); }
+
+    /* ── HERO ── */
+    .hero { position:relative; min-height:100vh; display:flex; align-items:center; overflow:hidden; }
+    .hero-parallax-bg { position:absolute; inset:-20%; background:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1800&q=80') center/cover no-repeat; will-change:transform; }
+    .hero-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(26,47,69,0.78) 0%,rgba(94,155,191,0.55) 60%,rgba(176,224,230,0.25) 100%); }
+    .hero-content { position:relative; z-index:2; padding:0 56px; max-width:700px; }
+    .eyebrow { font-size:11px; font-weight:400; letter-spacing:3px; text-transform:uppercase; color:var(--powder); margin-bottom:24px; }
+    .hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(48px,6vw,80px); font-weight:300; line-height:1.1; color:var(--white); margin-bottom:28px; }
+    .hero h1 em { font-style:italic; color:var(--powder); }
+    .hero-sub { font-size:16px; font-weight:300; color:rgba(245,251,255,0.82); max-width:460px; line-height:1.8; margin-bottom:40px; }
+    .hero-btns { display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+    .btn-primary { padding:14px 30px; background:var(--sky); color:var(--navy); border-radius:40px; font-size:14px; font-weight:500; text-decoration:none; transition:background 0.2s; }
+    .btn-primary:hover { background:var(--powder); }
+    .btn-ghost { padding:14px 30px; border:0.5px solid rgba(245,251,255,0.5); color:var(--white); border-radius:40px; font-size:14px; font-weight:400; text-decoration:none; transition:border-color 0.2s,color 0.2s; }
+    .btn-ghost:hover { border-color:var(--powder); color:var(--powder); }
+    .hero-scroll-hint { position:absolute; bottom:40px; left:56px; display:flex; align-items:center; gap:10px; color:rgba(245,251,255,0.5); font-size:11px; letter-spacing:2px; text-transform:uppercase; z-index:2; }
+    .scroll-line { width:40px; height:0.5px; background:rgba(245,251,255,0.4); }
+
+    /* ── TRUST BAR ── */
+    .trust-bar { background:var(--navy); padding:22px 56px; display:flex; justify-content:center; gap:56px; flex-wrap:wrap; }
+    .trust-item { font-size:12px; font-weight:400; letter-spacing:2px; text-transform:uppercase; color:var(--sky); }
+
+    /* ── SECTIONS ── */
+    section { padding:100px 56px; }
+    .section-label { font-size:11px; font-weight:400; letter-spacing:3px; text-transform:uppercase; color:var(--sky-deep); margin-bottom:16px; }
+    .section-title { font-family:'Cormorant Garamond',serif; font-size:clamp(32px,3.5vw,52px); font-weight:300; line-height:1.15; color:var(--navy); margin-bottom:18px; }
+    .section-body { font-size:16px; font-weight:300; color:var(--slate); line-height:1.8; max-width:520px; }
+
+    /* ── SERVICES PARALLAX ── */
+    .offer-parallax { position:relative; min-height:520px; overflow:hidden; display:flex; align-items:center; }
+    .offer-parallax-bg { position:absolute; inset:-25%; background:url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1600&q=80') center/cover no-repeat; will-change:transform; }
+    .offer-overlay { position:absolute; inset:0; background:rgba(26,47,69,0.84); }
+    .offer-content { position:relative; z-index:2; padding:80px 56px; width:100%; }
+    .offer-content .section-label { color:var(--sky); }
+    .offer-content .section-title { color:var(--white); margin-bottom:48px; }
+    .cards-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+    .card { background:rgba(245,251,255,0.07); border:0.5px solid rgba(155,189,220,0.35); border-radius:12px; padding:28px 24px; transition:background 0.25s; }
+    .card:hover { background:rgba(245,251,255,0.13); }
+    .card-icon { font-size:22px; color:var(--sky); margin-bottom:14px; display:block; }
+    .card-title { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:400; color:var(--white); margin-bottom:10px; line-height:1.2; }
+    .card-body { font-size:14px; font-weight:300; color:rgba(214,234,244,0.85); line-height:1.7; }
+    .card-tag { display:inline-block; margin-top:14px; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--sky); border:0.5px solid rgba(155,189,220,0.5); padding:4px 10px; border-radius:20px; }
+
+    /* ── ABOUT ── */
+    .about-wrap { background:var(--alice); }
+    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+    .about-img-placeholder { width:100%; aspect-ratio:3/4; background:var(--mist); border-radius:8px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; color:var(--sky-deep); font-size:13px; }
+    .about-img-placeholder svg { width:40px; height:40px; stroke:var(--sky-deep); fill:none; stroke-width:1.5; }
+    .accent-line { display:block; width:40px; height:1px; background:var(--sky); margin:24px 0; }
+    .about-quote { font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:300; font-style:italic; color:var(--sky-deep); line-height:1.4; margin-top:28px; padding-left:20px; border-left:1.5px solid var(--sky); }
+
+    /* ── FORMATS ── */
+    .formats-wrap { background:var(--arctic); }
+    .formats-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:48px; }
+    .format-card { background:var(--white); border:0.5px solid var(--mist); border-radius:12px; padding:36px 32px; }
+    .format-num { font-family:'Cormorant Garamond',serif; font-size:56px; font-weight:300; color:var(--mist); line-height:1; margin-bottom:12px; }
+    .format-title { font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:400; color:var(--navy); margin-bottom:12px; }
+    .format-body { font-size:14px; font-weight:300; color:var(--slate); line-height:1.7; margin-bottom:20px; }
+    .format-tags { display:flex; gap:8px; flex-wrap:wrap; }
+    .tag { font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--sky-deep); background:var(--alice); padding:5px 12px; border-radius:20px; }
+
+    /* ── TESTIMONIALS PARALLAX ── */
+    .testi-wrap { position:relative; overflow:hidden; }
+    .testi-parallax-bg { position:absolute; inset:-25%; background:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=80') center/cover no-repeat; will-change:transform; filter:grayscale(20%) hue-rotate(180deg) saturate(0.6); }
+    .testi-overlay { position:absolute; inset:0; background:rgba(26,47,69,0.90); }
+    .testi-content { position:relative; z-index:2; padding:100px 56px; }
+    .testi-content .section-label { color:var(--sky); }
+    .testi-content .section-title { color:var(--white); margin-bottom:56px; }
+    .testi-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; }
+    .testi-card { background:rgba(245,251,255,0.06); border:0.5px solid rgba(155,189,220,0.25); border-radius:12px; padding:28px 24px; }
+    .testi-stars { color:var(--sky); font-size:14px; letter-spacing:3px; margin-bottom:16px; }
+    .testi-text { font-family:'Cormorant Garamond',serif; font-size:19px; font-weight:300; font-style:italic; color:rgba(245,251,255,0.9); line-height:1.6; margin-bottom:18px; }
+    .testi-name { font-size:12px; font-weight:400; letter-spacing:1.5px; text-transform:uppercase; color:var(--sky); }
+
+    /* ── CTA ── */
+    .cta-wrap { background:var(--alice); text-align:center; }
+    .cta-wrap .section-title { margin:0 auto 18px; }
+    .cta-wrap .section-body { margin:0 auto 40px; text-align:center; }
+    .cta-location { font-size:13px; font-weight:400; letter-spacing:1.5px; text-transform:uppercase; color:var(--sky-deep); margin-bottom:40px; display:flex; align-items:center; justify-content:center; gap:8px; }
+    .cta-location::before,.cta-location::after { content:''; display:block; width:32px; height:0.5px; background:var(--sky); }
+    .cta-btns { display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+    .btn-navy { padding:14px 30px; background:var(--navy); color:var(--white); border-radius:40px; font-size:14px; font-weight:400; text-decoration:none; transition:background 0.2s; }
+    .btn-navy:hover { background:var(--navy-mid); }
+    .btn-outline-navy { padding:14px 30px; border:0.5px solid var(--navy); color:var(--navy); border-radius:40px; font-size:14px; font-weight:400; text-decoration:none; transition:background 0.2s,color 0.2s; }
+    .btn-outline-navy:hover { background:var(--navy); color:var(--white); }
+
+    /* ── FOOTER ── */
+    footer { background:var(--navy); padding:36px 56px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+    .footer-logo { font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:400; color:var(--sky); letter-spacing:0.04em; }
+    .footer-links { display:flex; gap:24px; list-style:none; }
+    .footer-links a { font-size:12px; font-weight:400; color:var(--mist); text-decoration:none; opacity:0.6; transition:opacity 0.2s; }
+    .footer-links a:hover { opacity:1; }
+    .footer-copy { font-size:12px; color:var(--mist); opacity:0.4; }
+
+    /* ── REVEAL ── */
+    .reveal { opacity:0; transform:translateY(32px); transition:opacity 0.75s ease,transform 0.75s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .reveal-delay-1 { transition-delay:0.1s; }
+    .reveal-delay-2 { transition-delay:0.2s; }
+    .reveal-delay-3 { transition-delay:0.3s; }
+
+    @media (prefers-reduced-motion:reduce) {
+      .reveal { opacity:1; transform:none; transition:none; }
+      .hero-parallax-bg,.offer-parallax-bg,.testi-parallax-bg { transform:none !important; }
+    }
+    @media (max-width:768px) {
+      nav { padding:16px 24px; }
+      .nav-links { display:none; }
+      section { padding:72px 24px; }
+      .hero-content { padding:0 24px; }
+      .hero-scroll-hint { left:24px; }
+      .trust-bar { padding:20px 24px; gap:24px; }
+      .offer-content { padding:60px 24px; }
+      .about-grid { grid-template-columns:1fr; gap:40px; }
+      .formats-grid { grid-template-columns:1fr; }
+      .testi-content { padding:72px 24px; }
+      footer { padding:28px 24px; flex-direction:column; align-items:flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="page-loader"><div class="loader-logo">Matthew Bochsler</div></div>
+
+  <!-- All HTML is rendered by JS from content.json -->
+  <div id="site"></div>
+
+  <script>
+  // ── FETCH CONTENT & RENDER ──────────────────────────────────────────────
+  // Change this path to wherever you host content.json
+  const CONTENT_URL = './content.json';
+
+  function el(tag, cls, html) {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (html !== undefined) e.innerHTML = html;
+    return e;
+  }
+
+  function buildSite(c) {
+    const site = document.getElementById('site');
+
+    // ── NAV ──
+    const nav = el('nav');
+    nav.innerHTML = `
+      <div class="nav-logo">${c.nav.logo}</div>
+      <ul class="nav-links">
+        ${c.nav.links.map(l => `<li><a href="${l.href}">${l.label}</a></li>`).join('')}
+      </ul>
+      <a href="${c.cta.cta_primary === 'Book a 1:1 session' ? '#contact' : '#contact'}" class="nav-book">${c.nav.cta}</a>
+    `;
+    site.appendChild(nav);
+
+    // ── HERO ──
+    const hero = el('section', 'hero');
+    hero.id = 'home';
+    hero.innerHTML = `
+      <div class="hero-parallax-bg" id="heroBg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">${c.hero.eyebrow}</p>
+        <h1>${c.hero.headline_line1}<br>${c.hero.headline_line2}<br><em>${c.hero.headline_line3}</em></h1>
+        <p class="hero-sub">${c.hero.body}</p>
+        <div class="hero-btns">
+          <a href="#offer" class="btn-primary">${c.hero.cta_primary}</a>
+          <a href="#formats" class="btn-ghost">${c.hero.cta_secondary}</a>
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    `;
+    site.appendChild(hero);
+
+    // ── TRUST BAR ──
+    const trust = el('div', 'trust-bar');
+    trust.innerHTML = c.trust_bar.map(t => `<span class="trust-item">${t}</span>`).join('');
+    site.appendChild(trust);
+
+    // ── SERVICES PARALLAX ──
+    const offer = el('div', 'offer-parallax');
+    offer.id = 'offer';
+    offer.innerHTML = `
+      <div class="offer-parallax-bg" id="offerBg"></div>
+      <div class="offer-overlay"></div>
+      <div class="offer-content">
+        <p class="section-label reveal">${c.services.label}</p>
+        <h2 class="section-title reveal reveal-delay-1">${c.services.title_line1}<br>${c.services.title_line2}</h2>
+        <div class="cards-grid">
+          ${c.services.cards.map((card, i) => `
+            <div class="card reveal reveal-delay-${i+1}">
+              <span class="card-icon">${card.icon}</span>
+              <div class="card-title">${card.title}</div>
+              <div class="card-body">${card.body}</div>
+              <span class="card-tag">${card.tag}</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+    site.appendChild(offer);
+
+    // ── ABOUT ──
+    const about = el('section', 'about-wrap');
+    about.id = 'about';
+    about.innerHTML = `
+      <div class="about-grid">
+        <div class="reveal">
+          <div class="about-img-placeholder">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="16" r="9"/>
+              <path d="M6 42c0-9.941 8.059-18 18-18s18 8.059 18 18"/>
+            </svg>
+            <span>Your portrait here</span>
+          </div>
+        </div>
+        <div>
+          <p class="section-label reveal">${c.about.label}</p>
+          <h2 class="section-title reveal reveal-delay-1">${c.about.title_line1}<br>${c.about.title_line2}</h2>
+          <span class="accent-line reveal reveal-delay-1"></span>
+          <p class="section-body reveal reveal-delay-2">${c.about.body_1}</p>
+          <p class="section-body reveal reveal-delay-2" style="margin-top:16px">${c.about.body_2}</p>
+          <blockquote class="about-quote reveal reveal-delay-3">"${c.about.quote}"</blockquote>
+        </div>
+      </div>
+    `;
+    site.appendChild(about);
+
+    // ── FORMATS ──
+    const formats = el('section', 'formats-wrap');
+    formats.id = 'formats';
+    formats.innerHTML = `
+      <p class="section-label reveal">${c.formats.label}</p>
+      <h2 class="section-title reveal reveal-delay-1">${c.formats.title_line1}<br>${c.formats.title_line2}</h2>
+      <div class="formats-grid">
+        ${c.formats.items.map((item, i) => `
+          <div class="format-card reveal reveal-delay-${i+1}">
+            <div class="format-num">${item.number}</div>
+            <div class="format-title">${item.title}</div>
+            <p class="format-body">${item.body}</p>
+            <div class="format-tags">
+              ${item.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+    site.appendChild(formats);
+
+    // ── TESTIMONIALS PARALLAX ──
+    const testi = el('div', 'testi-wrap');
+    testi.innerHTML = `
+      <div class="testi-parallax-bg" id="testiBg"></div>
+      <div class="testi-overlay"></div>
+      <div class="testi-content">
+        <p class="section-label reveal">${c.testimonials.label}</p>
+        <h2 class="section-title reveal reveal-delay-1">${c.testimonials.title}</h2>
+        <div class="testi-grid">
+          ${c.testimonials.items.map((t, i) => `
+            <div class="testi-card reveal reveal-delay-${i+1}">
+              <div class="testi-stars">★ ★ ★ ★ ★</div>
+              <p class="testi-text">"${t.text}"</p>
+              <div class="testi-name">— ${t.name}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+    site.appendChild(testi);
+
+    // ── CTA ──
+    const cta = el('section', 'cta-wrap');
+    cta.id = 'contact';
+    cta.innerHTML = `
+      <p class="section-label reveal">${c.cta.label}</p>
+      <h2 class="section-title reveal reveal-delay-1">${c.cta.title_line1}<br>${c.cta.title_line2}</h2>
+      <div class="cta-location reveal reveal-delay-1">${c.cta.location}</div>
+      <p class="section-body reveal reveal-delay-2">${c.cta.body}</p>
+      <div class="cta-btns reveal reveal-delay-3">
+        <a href="#" class="btn-navy">${c.cta.cta_primary}</a>
+        <a href="#" class="btn-outline-navy">${c.cta.cta_secondary}</a>
+      </div>
+    `;
+    site.appendChild(cta);
+
+    // ── FOOTER ──
+    const footer = el('footer');
+    footer.innerHTML = `
+      <div class="footer-logo">${c.footer.logo}</div>
+      <ul class="footer-links">
+        ${c.footer.links.map(l => `<li><a href="${l.href}">${l.label}</a></li>`).join('')}
+      </ul>
+      <span class="footer-copy">${c.footer.copyright}</span>
+    `;
+    site.appendChild(footer);
+
+    // ── HIDE LOADER ──
+    document.getElementById('page-loader').classList.add('hidden');
+
+    // ── LENIS SMOOTH SCROLL ──
+    const lenis = new Lenis({
+      duration: 1.25,
+      easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+    });
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); lenis.scrollTo(target, { offset: -80 }); }
+      });
+    });
+
+    // ── PARALLAX ──
+    const heroBg  = document.getElementById('heroBg');
+    const offerBg = document.getElementById('offerBg');
+    const testiBg = document.getElementById('testiBg');
+
+    function getParallax(el, speed) {
+      const rect = el.parentElement.getBoundingClientRect();
+      const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+      return (progress - 0.5) * speed;
+    }
+
+    lenis.on('scroll', ({ scroll }) => {
+      if (heroBg)  heroBg.style.transform  = `translateY(${getParallax(heroBg,  120)}px)`;
+      if (offerBg) offerBg.style.transform = `translateY(${getParallax(offerBg, 100)}px)`;
+      if (testiBg) testiBg.style.transform = `translateY(${getParallax(testiBg, 100)}px)`;
+      nav.style.padding = scroll > 60 ? '12px 56px' : '20px 56px';
+    });
+
+    // ── SCROLL REVEAL ──
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  }
+
+  // ── LOAD content.json ──
+  fetch(CONTENT_URL)
+    .then(r => {
+      if (!r.ok) throw new Error('Could not load content.json');
+      return r.json();
+    })
+    .then(data => buildSite(data))
+    .catch(err => {
+      console.error(err);
+      document.getElementById('page-loader').innerHTML =
+        `<p style="font-family:sans-serif;color:#4A6880;font-size:14px;">
+          Could not load content.json.<br>Make sure it's in the same folder as this HTML file.
+        </p>`;
+    });
+  </script>
+</body>
+</html>
