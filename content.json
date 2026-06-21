@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "logo": "Matthew Bochsler",
+    "links": [
+      { "label": "Services",     "href": "#offer" },
+      { "label": "About",        "href": "#about" },
+      { "label": "Work with me", "href": "#formats" },
+      { "label": "Contact",      "href": "#contact" }
+    ],
+    "cta": "Book a session"
+  },
+
+  "hero": {
+    "eyebrow": "Energetic bodywork · Austin, TX",
+    "headline_line1": "Hands on.",
+    "headline_line2": "Hands off.",
+    "headline_line3": "No limits.",
+    "body": "Bodywork that meets you where you are — and moves you past what's been holding you back. Whatever the limitation or challenge, we work it from every angle.",
+    "cta_primary": "Explore my work",
+    "cta_secondary": "See how it works"
+  },
+
+  "trust_bar": [
+    "Hands-on bodywork",
+    "Hands-off energy work",
+    "Group classes",
+    "In person & online",
+    "Austin, TX"
+  ],
+
+  "services": {
+    "label": "What I offer",
+    "title_line1": "Every limitation has",
+    "title_line2": "a way through it.",
+    "cards": [
+      {
+        "icon": "✦",
+        "title": "Hands-On Bodywork",
+        "body": "Direct physical contact that locates and releases what's stuck. Structural, energetic, and intuitive — guided entirely by what your body communicates in the moment.",
+        "tag": "In person · Austin"
+      },
+      {
+        "icon": "◎",
+        "title": "Hands-Off Energy Work",
+        "body": "No touch required. Energetic bodywork works at a distance — online or in person — addressing limitations and challenges at the level where they originate.",
+        "tag": "In person · Online"
+      },
+      {
+        "icon": "⟁",
+        "title": "Classes & Group Work",
+        "body": "Guided group sessions that teach you to work with your own system. Movement, energy awareness, and nervous system tools you can apply long after the class ends.",
+        "tag": "In person · Online"
+      }
+    ]
+  },
+
+  "about": {
+    "label": "About Matthew",
+    "title_line1": "Human first.",
+    "title_line2": "Practitioner second.",
+    "body_1": "I came to this work through my own body's demands. What I discovered is that limitations — physical, energetic, or mental — respond to the right kind of contact. Sometimes that's hands-on. Sometimes it's hands-off. The approach follows what your system actually needs.",
+    "body_2": "Sessions are available in Austin and online worldwide. Whatever the challenge, we find the way through it.",
+    "quote": "Hands-on or hands-off bodywork to change any limitation or challenge."
+  },
+
+  "formats": {
+    "label": "How we work together",
+    "title_line1": "Flexible for your life",
+    "title_line2": "and your training schedule.",
+    "items": [
+      {
+        "number": "01",
+        "title": "In Person — Austin, TX",
+        "body": "Sessions held in Austin. The most immersive way to work — hands-on energetic bodywork in a quiet, focused setting designed to let your system fully land.",
+        "tags": ["1:1 sessions", "Group classes", "Austin"]
+      },
+      {
+        "number": "02",
+        "title": "Online — Anywhere",
+        "body": "Distance is not a barrier to energetic work. Online sessions are available worldwide for those outside Austin, or who prefer the convenience of home.",
+        "tags": ["1:1 sessions", "Group classes", "Worldwide"]
+      }
+    ]
+  },
+
+  "testimonials": {
+    "label": "What clients say",
+    "title": "Results you can feel.",
+    "items": [
+      {
+        "text": "After one session with Matthew I slept better than I had in months. Something genuinely shifted that I hadn't been able to access through any other recovery method.",
+        "name": "Runner, Austin Marathon"
+      },
+      {
+        "text": "His classes are unlike anything I've done. I came for the physical recovery work and stayed for everything else it opened up.",
+        "name": "Yoga teacher & performer"
+      },
+      {
+        "text": "I was skeptical about online sessions but the work translated completely. The regulation I feel after our calls is real and lasting.",
+        "name": "Cyclist, training remotely"
+      }
+    ]
+  },
+
+  "cta": {
+    "label": "Ready to begin",
+    "title_line1": "Your next step starts",
+    "title_line2": "with one session.",
+    "location": "Austin, TX & Online Worldwide",
+    "body": "Bring all of your limitations, challenges, and questions — and let's see what's possible.",
+    "cta_primary": "Book a 1:1 session",
+    "cta_secondary": "See class schedule"
+  },
+
+  "footer": {
+    "logo": "Matthew Bochsler",
+    "links": [
+      { "label": "Instagram", "href": "#" },
+      { "label": "Contact",   "href": "#" },
+      { "label": "Book a session", "href": "#" }
+    ],
+    "copyright": "© 2026 Matthew Bochsler"
+  }
+}
