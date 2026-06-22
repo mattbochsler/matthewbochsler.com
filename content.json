@@ -11,21 +11,20 @@
   },
 
   "hero": {
-    "eyebrow": "Energetic bodywork · Austin, TX",
-    "headline_line1": "Hands on.",
-    "headline_line2": "Hands off.",
-    "headline_line3": "No limits.",
-    "body": "Bodywork that meets you where you are — and moves you past what's been holding you back. Whatever the limitation or challenge, we work it from every angle.",
+    "eyebrow": "Your Body and Your Being · Austin, TX / Online",
+    "headline_line1": "Hands on or hands off.",
+    "headline_line2": "When you're willing to pull all the stops,",
+    "headline_line3": "anything is possible.",
+    "body": "Bodywork that meets you where you are and moves you past what's been holding you back. Whatever the limitation or challenge.",
     "cta_primary": "Explore my work",
     "cta_secondary": "See how it works"
   },
 
   "trust_bar": [
     "Hands-on bodywork",
-    "Hands-off energy work",
-    "Group classes",
-    "In person & online",
-    "Austin, TX"
+    "Hands-off bodywork",
+    "Group sessions & classes",
+    "In person & online"
   ],
 
   "services": {
@@ -56,28 +55,29 @@
 
   "about": {
     "label": "About Matthew",
-    "title_line1": "Human first.",
-    "title_line2": "Practitioner second.",
-    "body_1": "I came to this work through my own body's demands. What I discovered is that limitations — physical, energetic, or mental — respond to the right kind of contact. Sometimes that's hands-on. Sometimes it's hands-off. The approach follows what your system actually needs.",
+    "title_line1": "Your body always knows",
+    "title_line2": "what's needed.",
+    "body_1": "Being willing to follow your body's lead is the challenge. I came to this work through my own body's demands. What I discovered is that limitations — physical, energetic, or mental — respond to the different types of contact. Sometimes that's hands-on. Sometimes it's hands-off. The approach follows what your system actually needs.",
     "body_2": "Sessions are available in Austin and online worldwide. Whatever the challenge, we find the way through it.",
-    "quote": "Hands-on or hands-off bodywork to change any limitation or challenge."
+    "quote": "Hands-on or hands-off bodywork to change anything."
   },
 
   "formats": {
-    "label": "How we work together",
-    "title_line1": "Flexible for your life",
-    "title_line2": "and your training schedule.",
+    "label": "How we can work together",
+    "title_line1": "Individual sessions,",
+    "title_line2": "session packages.",
+    "intro": "Flexible for your rate of change.",
     "items": [
       {
         "number": "01",
         "title": "In Person — Austin, TX",
-        "body": "Sessions held in Austin. The most immersive way to work — hands-on energetic bodywork in a quiet, focused setting designed to let your system fully land.",
+        "body": "Sessions held in Austin at my office (possibility for home sessions per request). The most immersive way to work — in person bodywork in a quiet, undistracted setting designed to let your system fully land.",
         "tags": ["1:1 sessions", "Group classes", "Austin"]
       },
       {
         "number": "02",
         "title": "Online — Anywhere",
-        "body": "Distance is not a barrier to energetic work. Online sessions are available worldwide for those outside Austin, or who prefer the convenience of home.",
+        "body": "Distance is not a barrier to change, it's just different. Online sessions are available worldwide for those outside Austin, or who prefer the convenience of home.",
         "tags": ["1:1 sessions", "Group classes", "Worldwide"]
       }
     ]
