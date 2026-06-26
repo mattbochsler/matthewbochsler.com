@@ -72,6 +72,7 @@
     .eyebrow { font-size:11px; font-weight:400; letter-spacing:3px; text-transform:uppercase; color:var(--powder); margin-bottom:24px; }
     .hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(34px,4.4vw,58px); font-weight:300; line-height:1.25; color:var(--white); margin-bottom:28px; max-width:640px; }
     .hero h1 em { font-style:italic; color:var(--powder); }
+    .hero h1 .dim { color:rgba(245,251,255,0.45); font-style:italic; }
     .hero-sub { font-size:16px; font-weight:300; color:rgba(245,251,255,0.82); max-width:460px; line-height:1.8; margin-bottom:40px; margin-left:auto; margin-right:auto; }
     .hero-btns { display:flex; gap:16px; align-items:center; justify-content:center; flex-wrap:wrap; }
     .btn-primary { padding:14px 30px; background:var(--sky); color:var(--navy); border-radius:40px; font-size:14px; font-weight:500; text-decoration:none; transition:background 0.2s; }
@@ -286,7 +287,7 @@
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <p class="eyebrow">${c.hero.eyebrow}</p>
-        <h1>${c.hero.headline_line1} ${c.hero.headline_line2} ${c.hero.headline_line3}</h1>
+        <h1>Your body doesn't need a <span class="dim">smaller</span> life. It needs a <em>bigger</em> one.</h1>
         <p class="hero-sub">${c.hero.body}</p>
         <div class="hero-btns">
           <a href="#offer" class="btn-primary">${c.hero.cta_primary}</a>
