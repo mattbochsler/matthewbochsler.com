@@ -2,14 +2,25 @@
   "nav": {
     "logo": "Matthew Bochsler",
     "links": [
-      { "label": "Services",     "href": "#offer" },
-      { "label": "About",        "href": "#about" },
-      { "label": "Work with me", "href": "#formats" },
-      { "label": "Contact",      "href": "#contact" }
+      {
+        "label": "Services",
+        "href": "#offer"
+      },
+      {
+        "label": "About",
+        "href": "#about"
+      },
+      {
+        "label": "Work with me",
+        "href": "#formats"
+      },
+      {
+        "label": "Contact",
+        "href": "#contact"
+      }
     ],
     "cta": "Book a session"
   },
-
   "hero": {
     "eyebrow": "BodyWork for Your Body and Being · Austin, TX / Online",
     "headline_line1": "Your body doesn't need a smaller life.",
@@ -17,14 +28,12 @@
     "cta_primary": "Explore my work",
     "cta_secondary": "See how it works"
   },
-
   "trust_bar": [
     "Hands-on bodywork",
     "Hands-off bodywork",
     "Group sessions & classes",
     "In person & online"
   ],
-
   "services": {
     "label": "What I offer",
     "title_line1": "What if every limitation",
@@ -33,24 +42,23 @@
       {
         "icon": "✦",
         "title": "Hands-On Bodywork",
-        "body": "Direct physical contact that locates and releases what's stuck. Structural, energetic, and intuitive — guided entirely by what your body communicates in the moment.",
+        "body": "Direct physical contact that locates, releases to alters what's stuck. Structural, energetic, and intuitive — guided by what your body is aware of and asking for.",
         "tag": "In person · Austin"
       },
       {
         "icon": "◎",
         "title": "Hands-Off Energy Work",
-        "body": "No touch required. Energetic bodywork works at a distance — online or in person — addressing limitations and challenges at the level where they originate.",
+        "body": "No touch required. Energetic bodywork work at a distance — online or in person — addressing limitations, challenges, or functional changes at the level where they originate.",
         "tag": "In person · Online"
       },
       {
         "icon": "⟁",
         "title": "Classes & Group Work",
-        "body": "Guided group sessions that teach you to work with your own system. Movement, energy awareness, and nervous system tools you can apply long after the class ends.",
+        "body": "Group Classes to facilitate you working with your body. Movement, energy awareness, and nervous system tools to assist you in changing how your body functions, and maybe even upgrade it :)",
         "tag": "In person · Online"
       }
     ]
   },
-
   "about": {
     "label": "About Matthew",
     "title_line1": "When your body is the center of your life,",
@@ -60,7 +68,6 @@
     "body_2": "Sessions are available in Austin and online worldwide. Ready for something to point you in that direction?",
     "quote": "Your body doesn't need to be less in your life. It needs to be in a bigger life."
   },
-
   "formats": {
     "label": "How we can work together",
     "title_line1": "Individual sessions,",
@@ -71,17 +78,24 @@
         "number": "01",
         "title": "In Person — Austin, TX",
         "body": "Sessions held in Austin at my office (possibility for home sessions per request). The most immersive way to work — in person bodywork in a quiet, undistracted setting designed to let your system fully land.",
-        "tags": ["1:1 sessions", "Group classes", "Austin"]
+        "tags": [
+          "1:1 sessions",
+          "Group classes",
+          "Austin"
+        ]
       },
       {
         "number": "02",
         "title": "Online — Anywhere",
         "body": "Distance is not a barrier to change, it's just different. Online sessions are available worldwide for those outside Austin, or who prefer the convenience of home.",
-        "tags": ["1:1 sessions", "Group classes", "Worldwide"]
+        "tags": [
+          "1:1 sessions",
+          "Group classes",
+          "Worldwide"
+        ]
       }
     ]
   },
-
   "testimonials": {
     "label": "What clients say",
     "title": "Results you can feel.",
@@ -100,7 +114,6 @@
       }
     ]
   },
-
   "cta": {
     "label": "Ready to begin",
     "title_line1": "Your next step starts",
@@ -110,13 +123,21 @@
     "cta_primary": "Book a 1:1 session",
     "cta_secondary": "See class schedule"
   },
-
   "footer": {
     "logo": "Matthew Bochsler",
     "links": [
-      { "label": "Instagram", "href": "#" },
-      { "label": "Contact",   "href": "#" },
-      { "label": "Book a session", "href": "#" }
+      {
+        "label": "Instagram",
+        "href": "#"
+      },
+      {
+        "label": "Contact",
+        "href": "#"
+      },
+      {
+        "label": "Book a session",
+        "href": "#"
+      }
     ],
     "copyright": "© 2026 Matthew Bochsler"
   }
