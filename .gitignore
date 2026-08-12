@@ -1,0 +1,27 @@
+# Local OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*
+secrets/
+auth*.json
+
+# Browser/session state
+.playwright-profile/
+.standalone-browser-profile/
+storage-state*.json
+
+# Runtime/dependency output
+node_modules/
+*.log
+.cache/
